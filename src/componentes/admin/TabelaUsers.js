@@ -5,14 +5,21 @@ class TabelaUsers extends Component {
 
     constructor(props){
         super(props);
-        this.state = {naves : []};
+        this.state = {users : []};
     }
 
     componentDidMount(){
+        var instance = axios.create({
+            baseURL: 'http://localhost:4567/api',
+            headers: {
+                'Content-Type': 'text/html;charset=utf-8'
+            }
+        });
+
         let self = this;
-        axios.get("https://swapi.co/api/starships/")
-            .then(function (response) {
-                self.setState({naves: response.data.results})
+        instance.get("/users")
+        .then(function (response) {
+                self.setState({users: response.data.results})
             }).catch (function (error) {
             console.log(error)
         });
@@ -21,12 +28,11 @@ class TabelaUsers extends Component {
 
     render() {
 
-        let naves = this.state.naves.map(function (nave, index) {
+        let users = this.state.users.map(function (user, index) {
             return(
                 <tr>
-                    <td>{nave.name}</td>
-                    <td>{nave.model}</td>
-                    <td>{nave.starship_class}</td>
+                    <td>{user.name}</td>
+                    <td>{user.email}</td>
                 </tr>
             )
 
@@ -36,7 +42,7 @@ class TabelaUsers extends Component {
             <div  className="p-5">
                 <div className="card">
                     <div className="card-header">
-                        <h3>Naves:</h3>
+                        <h3>Usuários:</h3>
                     </div>
                     <div>
                         <blockquote className="blockquote mb-0">
@@ -45,12 +51,11 @@ class TabelaUsers extends Component {
                                     <thead>
                                     <tr>
                                         <th>Nome</th>
-                                        <th>Modelo</th>
-                                        <th>Classe</th>
+                                        <th>Email</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {naves}
+                                        {users}
                                     </tbody>
                                 </table>
                             </div>

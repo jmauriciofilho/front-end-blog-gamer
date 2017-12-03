@@ -14,13 +14,14 @@ class App extends Component {
         return (
             <div>
                 <Switch>
-                    <Route exact path="/" component={Navbar} />
-                    <Route path="/admin/" component={NavbarAdmin} />
+                    <Route path="/" component={Navbar} />
+                    <Route exact path="/admin/" component={NavbarAdmin} />
                 </Switch>
                 <div>
                     <Switch>
                         <Route exact path="/" component={Home}/>
                         <Route path="/login" component={Login}/>
+                        <Route exact path="/admin/" component={TabelaUsers}/>
                         <Route path="/admin/users" component={TabelaUsers}/>
                         <Route path="/admin/posts" component={TabelaPosts}/>
                         <Route path="/admin/pots/id/comments" component={TabelaComments}/>

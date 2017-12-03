@@ -21,7 +21,7 @@ class NavbarAdmin extends Component {
                         <a className="nav-link" href="/admin/users">Usuários</a>
                     </li>
                 </ul>
-                <span class="navbar-text">
+                <span className="navbar-text">
                     <a className="navbar-brand" href="#">Logout</a>
                 </span>
             </div>

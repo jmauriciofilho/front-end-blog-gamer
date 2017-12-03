@@ -25,32 +25,25 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-            </div> 
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">List group item heading</h5>
-                        <small>3 days ago</small>
+            </div>
+            <div className="jumbotron jumbotron-fluid">
+                <div className="container">
+                    <div className="row">
+                        <div className="col">
+                            <figure className="figure">
+                                <img src={require("../media/callduty.jpg")} className="figure-img img-fluid rounded" alt="imagem da logo de star wars" />
+                            </figure>
+                        </div>
+                        <div className="col">
+                            <h4 className="card-title">Estratégias em um Novo Paradigma Globalizado</h4>
+                            <p className="card-text">
+                                    É claro que o desafiador cenário globalizado estende o alcance e a importância dos índices pretendidos. Por conseguinte, a complexidade dos estudos efetuados auxilia a preparação e a composição do orçamento setorial. Assim mesmo, o entendimento das metas propostas exige a precisão e a definição dos níveis de motivação departamental. Caros amigos, a constante divulgação das informações é uma das consequências das posturas dos órgãos dirigentes com relação às suas atribuições. 
+                                    Desta maneira, a revolução dos costumes garante a contribuição de um grupo importante na determinação das novas proposições. A prática cotidiana prova que a competitividade nas transações comerciais assume importantes posições no estabelecimento dos procedimentos normalmente adotados. O que temos que ter sempre em mente é que a mobilidade dos capitais internacionais facilita a criação do retorno esperado a longo prazo. As experiências acumuladas demonstram que a necessidade de renovação processual obstaculiza a apreciação da importância das condições inegavelmente apropriadas. 
+                                </p>
+                            {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
+                        </div>
                     </div>
-                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    <small>Donec id elit non mi porta.</small>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">List group item heading</h5>
-                        <small class="text-muted">3 days ago</small>
-                    </div>
-                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    <small class="text-muted">Donec id elit non mi porta.</small>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">List group item heading</h5>
-                        <small class="text-muted">3 days ago</small>
-                    </div>
-                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    <small class="text-muted">Donec id elit non mi porta.</small>
-                </a>
+                </div>
             </div>
         </div>
     );
