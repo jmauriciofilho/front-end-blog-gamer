@@ -5,14 +5,21 @@ class TabelaPosts extends Component {
 
     constructor(props){
         super(props);
-        this.state = {personagens : []};
+        this.state = {posts : []};
     }
 
     componentDidMount(){
+        var instance = axios.create({
+            baseURL: 'http://localhost:4567/api',
+            headers: {
+                'Content-Type': 'text/html;charset=utf-8'
+            }
+        });
+
         let self = this;
-        axios.get("https://swapi.co/api/people/")
+        instance.get("/posts")
             .then(function (response) {
-                self.setState({personagens: response.data.results})
+                self.setState({posts: response.data.results})
             }).catch (function (error) {
                 console.log(error)
             });
@@ -21,12 +28,15 @@ class TabelaPosts extends Component {
 
     render() {
 
-        let personagens = this.state.personagens.map(function (personagem, index) {
+        let posts = this.state.posts.map(function (post, index) {
             return(
                 <tr>
-                    <td>{personagem.name}</td>
-                    <td>{personagem.gender}</td>
-                    <td>{personagem.birth_year}</td>
+                    <td>{post.title}</td>
+                    <td>
+                        <button type="button" class="btn btn-info">Comentarios</button>
+                        <button type="button" class="btn btn-info">Editar</button>
+                        <button type="button" class="btn btn-danger">Excluir</button>
+                    </td>
                 </tr>
             )
 
@@ -34,23 +44,31 @@ class TabelaPosts extends Component {
 
         return (
             <div  className="p-5">
+                <button type="button" className="btn btn-primary">Criar Post</button>
+                <br/>
+                <br/>
                 <div className="card">
                     <div className="card-header">
-                        <h3>Personagens:</h3>
+                        <h3>Posts:</h3>
                     </div>
                     <div>
                         <blockquote className="blockquote mb-0">
-                            <div>
-                                <table className="table table-striped">
+                            <div className="p-2">
+                                <table id="example" className="display" width="100%">
                                     <thead>
                                     <tr>
-                                        <th>Nome</th>
-                                        <th>Gênero</th>
-                                        <th>Aniversário</th>
+                                        <th>Título</th>
+                                        <th>Ação</th>
                                     </tr>
                                     </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Título</th>
+                                            <th>Ações</th>
+                                        </tr>
+                                    </tfoot>
                                     <tbody>
-                                        {personagens}
+                                        {posts}
                                     </tbody>
                                 </table>
                             </div>

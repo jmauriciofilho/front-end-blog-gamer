@@ -33,6 +33,10 @@ class TabelaUsers extends Component {
                 <tr>
                     <td>{user.name}</td>
                     <td>{user.email}</td>
+                    <td>
+                        <button type="button" class="btn btn-info">Editar</button>
+                        <button type="button" class="btn btn-danger">Excluir</button>
+                    </td>
                 </tr>
             )
 
@@ -40,20 +44,31 @@ class TabelaUsers extends Component {
 
         return (
             <div  className="p-5">
+                <button type="button" className="btn btn-primary">Adiconar Usuário</button>
+                <br/>
+                <br/>
                 <div className="card">
                     <div className="card-header">
                         <h3>Usuários:</h3>
                     </div>
-                    <div>
+                    <div className="p-2">
                         <blockquote className="blockquote mb-0">
                             <div>
-                                <table className="table table-striped">
+                                <table id="example" className="display" width="100%">
                                     <thead>
                                     <tr>
                                         <th>Nome</th>
                                         <th>Email</th>
+                                        <th>Ações</th>
                                     </tr>
                                     </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Email</th>
+                                            <th>Ações</th>
+                                        </tr>
+                                    </tfoot>
                                     <tbody>
                                         {users}
                                     </tbody>

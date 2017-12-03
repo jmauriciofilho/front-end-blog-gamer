@@ -6,6 +6,8 @@ import Login from './componentes/admin/Login'
 import TabelaUsers from './componentes/admin/TabelaUsers';
 import TabelaPosts from './componentes/admin/TabelaPosts';
 import TabelaComments from './componentes/admin/TabelaComments';
+import FormsPosts from './componentes/admin/FormPosts';
+import FormUsers from './componentes/admin/FormsUsers';
 
 import {Switch, Route} from 'react-router-dom';
 
@@ -23,7 +25,9 @@ class App extends Component {
                         <Route path="/login" component={Login}/>
                         <Route exact path="/admin/" component={TabelaUsers}/>
                         <Route path="/admin/users" component={TabelaUsers}/>
+                        <Route path="/admin/users/create" component={FormUsers}/>
                         <Route path="/admin/posts" component={TabelaPosts}/>
+                        <Route path="/admin/posts/create" component={FormsPosts}/>
                         <Route path="/admin/pots/id/comments" component={TabelaComments}/>
                     </Switch>
                 </div>
