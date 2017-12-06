@@ -9,18 +9,11 @@ class TabelaUsers extends Component {
     }
 
     componentDidMount(){
-        var instance = axios.create({
-            baseURL: 'http://localhost:4567/api',
-            headers: {
-                'Content-Type': 'text/html;charset=utf-8'
-            }
-        });
-
         let self = this;
-        instance.get("/users")
+        axios.get("http://localhost:4567/api/users")
         .then(function (response) {
-                self.setState({users: response.data.results})
-            }).catch (function (error) {
+            self.setState({users: response.data})
+        }).catch (function (error) {
             console.log(error)
         });
     }
@@ -34,8 +27,8 @@ class TabelaUsers extends Component {
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     <td>
-                        <button type="button" class="btn btn-info">Editar</button>
-                        <button type="button" class="btn btn-danger">Excluir</button>
+                        <button type="button" className="btn btn-info">Editar</button>
+                        <button type="button" className="btn btn-danger">Excluir</button>
                     </td>
                 </tr>
             )
@@ -44,7 +37,7 @@ class TabelaUsers extends Component {
 
         return (
             <div  className="p-5">
-                <button type="button" className="btn btn-primary">Adiconar Usuário</button>
+                <button href="/admin/users/create" type="button" className="btn btn-primary">Adiconar Usuário</button>
                 <br/>
                 <br/>
                 <div className="card">

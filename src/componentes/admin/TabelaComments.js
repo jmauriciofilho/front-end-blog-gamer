@@ -9,17 +9,10 @@ class TabelaCommets extends Component {
     }
 
     componentDidMount(){
-        var instance = axios.create({
-            baseURL: 'http://localhost:4567/api',
-            headers: {
-                'Content-Type': 'text/html;charset=utf-8'
-            }
-        });
-
         let self = this;
-        axios.get("/coments")
+        axios.get("http://localhost:4567/api/coments")
             .then(function (response) {
-                self.setState({coments: response.data.results})
+                self.setState({coments: response.data})
             }).catch (function (error) {
                 console.log(error)
             });

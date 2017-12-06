@@ -9,17 +9,10 @@ class TabelaPosts extends Component {
     }
 
     componentDidMount(){
-        var instance = axios.create({
-            baseURL: 'http://localhost:4567/api',
-            headers: {
-                'Content-Type': 'text/html;charset=utf-8'
-            }
-        });
-
         let self = this;
-        instance.get("/posts")
+        axios.get("http://localhost:4567/api/posts")
             .then(function (response) {
-                self.setState({posts: response.data.results})
+                self.setState({posts: response.data})
             }).catch (function (error) {
                 console.log(error)
             });
