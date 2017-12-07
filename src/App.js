@@ -21,13 +21,13 @@ class App extends Component {
                 <div>
                     <Switch>
                         <Route exact path="/" component={Home}/>
-                        <Route path="/login" component={Login}/>
-                        <Route exact path="/admin/" component={TabelaUsers}/>
-                        <Route path="/admin/users" component={TabelaUsers}/>
-                        <Route path="/admin/users/create" component={FormUsers}/>
-                        <Route path="/admin/posts" component={TabelaPosts}/>
-                        <Route path="/admin/posts/create" component={FormsPosts}/>
-                        <Route path="/admin/pots/id/comments" component={TabelaComments}/>
+                        <Route exact path="/login" component={Login}/>
+                        <Route exact path="/admin" component={TabelaUsers}/>
+                        <Route exact path="/admin/users" component={TabelaUsers}/>
+                        <Route exact path="/admin/users/create" component={FormUsers}/>
+                        <Route exact path="/admin/posts" component={TabelaPosts}/>
+                        <Route exact path="/admin/posts/create" component={FormsPosts}/>
+                        <Route exact path="/admin/pots/id/comments" component={TabelaComments}/>
                     </Switch>
                 </div>
             </div>

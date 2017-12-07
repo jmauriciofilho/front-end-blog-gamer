@@ -23,7 +23,7 @@ class TabelaUsers extends Component {
 
         let users = this.state.users.map(function (user, index) {
             return(
-                <tr>
+                <tr key={user.id}>
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     <td>
@@ -37,7 +37,7 @@ class TabelaUsers extends Component {
 
         return (
             <div  className="p-5">
-                <button href="/admin/users/create" type="button" className="btn btn-primary">Adiconar Usuário</button>
+                <a href="/admin/users/create" className="btn btn-primary" role="button">Adicionar Usuário</a>
                 <br/>
                 <br/>
                 <div className="card">
@@ -47,7 +47,7 @@ class TabelaUsers extends Component {
                     <div className="p-2">
                         <blockquote className="blockquote mb-0">
                             <div>
-                                <table id="example" className="display" width="100%">
+                                <table className="table">
                                     <thead>
                                     <tr>
                                         <th>Nome</th>

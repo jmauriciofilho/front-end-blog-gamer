@@ -23,7 +23,7 @@ class TabelaCommets extends Component {
 
         let coments = this.state.coments.map(function (coment, index) {
             return(
-                <tr>
+                <tr key={coment.id}>
                     <td>{coment.author}</td>
                     <td>{coment.body}</td>
                     <td>
@@ -37,14 +37,15 @@ class TabelaCommets extends Component {
 
         return (
             <div  className="p-5">
+                <a href="#" className="btn btn-primary" role="button">Adicionar Comentários</a>
                 <div className="card">
                     <div className="card-header">
-                        <h3>Personagens:</h3>
+                        <h3>Comentários</h3>
                     </div>
                     <div>
                         <blockquote className="blockquote mb-0">
                             <div className="p-2">
-                                <table id="example" className="display" width="100%">
+                                <table className="table">
                                     <thead>
                                     <tr>
                                         <th>Autor</th>

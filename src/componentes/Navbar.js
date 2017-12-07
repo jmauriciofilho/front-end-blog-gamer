@@ -13,7 +13,7 @@ class Navbar extends Component {
             <ul className="navbar-nav mr-auto">
             </ul>
             <span className="navbar-text">
-                <a className="navbar-brand" href="/login">Login</a>
+                <a className="navbar-brand" href="/admin">Login</a>
             </span>
         </div>
         </nav>

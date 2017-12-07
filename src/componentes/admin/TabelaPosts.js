@@ -23,7 +23,7 @@ class TabelaPosts extends Component {
 
         let posts = this.state.posts.map(function (post, index) {
             return(
-                <tr>
+                <tr key={post.id}>
                     <td>{post.title}</td>
                     <td>
                         <button type="button" class="btn btn-info">Comentarios</button>
@@ -37,7 +37,7 @@ class TabelaPosts extends Component {
 
         return (
             <div  className="p-5">
-                <button type="button" className="btn btn-primary">Criar Post</button>
+                <a href="#" className="btn btn-primary" role="button">Criar Posts</a>
                 <br/>
                 <br/>
                 <div className="card">
@@ -47,7 +47,7 @@ class TabelaPosts extends Component {
                     <div>
                         <blockquote className="blockquote mb-0">
                             <div className="p-2">
-                                <table id="example" className="display" width="100%">
+                                <table className="table">
                                     <thead>
                                     <tr>
                                         <th>Título</th>
