@@ -27,8 +27,8 @@ class TabelaUsers extends Component {
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     <td>
-                        <button type="button" className="btn btn-info">Editar</button>
-                        <button type="button" className="btn btn-danger">Excluir</button>
+                        <a href={`/admin/${user.id}/edit`} className="btn btn-info" role="button">Editar</a>
+                        <a href="/admin/users/create" className="btn btn-danger" role="button">Excluir</a>
                     </td>
                 </tr>
             )

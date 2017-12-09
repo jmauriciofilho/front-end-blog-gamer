@@ -26,9 +26,9 @@ class TabelaPosts extends Component {
                 <tr key={post.id}>
                     <td>{post.title}</td>
                     <td>
-                        <button type="button" class="btn btn-info">Comentarios</button>
-                        <button type="button" class="btn btn-info">Editar</button>
-                        <button type="button" class="btn btn-danger">Excluir</button>
+                        <button type="button" className="btn btn-info">Comentarios</button>
+                        <button type="button" className="btn btn-info">Editar</button>
+                        <button type="button" className="btn btn-danger">Excluir</button>
                     </td>
                 </tr>
             )
@@ -37,7 +37,7 @@ class TabelaPosts extends Component {
 
         return (
             <div  className="p-5">
-                <a href="#" className="btn btn-primary" role="button">Criar Posts</a>
+                <a href="/admin/posts/create" className="btn btn-primary" role="button">Criar Posts</a>
                 <br/>
                 <br/>
                 <div className="card">

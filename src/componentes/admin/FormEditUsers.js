@@ -1,16 +1,14 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import {Redirect} from 'react-router-dom';
 
-class FormUsers extends Component {
+class FormEditUsers extends Component {
 
     constructor(props){
         super(props);
         this.state = {
             name: '',
             email: '',
-            password:'',
-            redirect: false
+            password:''
           };
 
         this.handleChangeName = this.handleChangeName.bind(this);
@@ -32,7 +30,6 @@ class FormUsers extends Component {
     }
   
     handleSubmit(event){
-        let self = this
         event.preventDefault();
         axios({
             method: 'post',
@@ -49,20 +46,12 @@ class FormUsers extends Component {
             json: true
         }).then(function (response) {
             console.log(response);
-            self.setState({redirect: true})
         }).catch(function (error) {
             console.log(error);
         });
     }
   
     render() {
-
-    const { redirect } = this.state;
-    
-    if (redirect) {
-        return <Redirect to='/admin/users'/>;
-    }
-
     return (
         <div className="p-2 w-50 m-0 m-auto">
             <form onSubmit={this.handleSubmit}>
@@ -85,4 +74,4 @@ class FormUsers extends Component {
   }
 }
 
-export default FormUsers;
+export default FormEditUsers;

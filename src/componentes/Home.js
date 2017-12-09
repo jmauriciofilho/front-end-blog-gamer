@@ -21,7 +21,7 @@ class Home extends Component {
 
     let posts = this.state.posts.map(function (post, index) {
         return(
-            <div className="jumbotron jumbotron-fluid">
+            <div key={post.id} className="jumbotron jumbotron-fluid">
                 <div className="container">
                     <div className="row">
                         {/* <div className="col">
@@ -34,7 +34,7 @@ class Home extends Component {
                             <p className="card-text">
                                 {post.body} 
                             </p>
-                            {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
+                            <a href={`/posts/${post.id}`} className="btn btn-primary">Ver mais...</a>
                         </div>
                     </div>
                 </div>
