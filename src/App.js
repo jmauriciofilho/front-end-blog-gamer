@@ -29,8 +29,10 @@ class App extends Component {
                         <Route exact path="/admin" component={TabelaUsers}/>
                         <Route exact path="/admin/users" component={TabelaUsers}/>
                         <Route exact path="/admin/users/create" component={FormUsers}/>
+                        <Route exact path="/admin/users/:id/edit" component={FormEditUsers}/>
                         <Route exact path="/admin/posts" component={TabelaPosts}/>
                         <Route exact path="/admin/posts/create" component={FormsPosts}/>
+                        <Route exact path="/admin/posts/:id/edit" component={FormsPosts}/>
                     </Switch>
                 </div>
             </div>

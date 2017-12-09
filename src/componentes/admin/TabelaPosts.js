@@ -27,7 +27,7 @@ class TabelaPosts extends Component {
                     <td>{post.title}</td>
                     <td>
                         <button type="button" className="btn btn-info">Comentarios</button>
-                        <button type="button" className="btn btn-info">Editar</button>
+                        <a href={`/admin/posts/${post.id}/edit`} className="btn btn-info" role="button">Editar</a>
                         <button type="button" className="btn btn-danger">Excluir</button>
                     </td>
                 </tr>

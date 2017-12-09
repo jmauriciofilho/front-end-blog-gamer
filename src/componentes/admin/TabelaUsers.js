@@ -1,11 +1,17 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom';
 
 class TabelaUsers extends Component {
 
     constructor(props){
         super(props);
-        this.state = {users : []};
+        this.state = {
+            users : [],
+            redirect : false
+        };
+
+        this.deleteUser = this.deleteUser.bind(this)
     }
 
     componentDidMount(){
@@ -18,8 +24,27 @@ class TabelaUsers extends Component {
         });
     }
 
+    deleteUser(id){
+        let self = this;
+        axios({
+            method: 'DELETE',
+            url: `http://localhost:4567/api/users/${id}`
+        }).then(function(response){
+            self.setState({redirect : true})
+        }).catch (function(error){
+            console.log(error)
+        })
+    }
+
 
     render() {
+        
+        const { redirect } = this.state;
+        
+        if (redirect) {
+            return <Redirect to='/admin/users'/>;
+        }
+
 
         let users = this.state.users.map(function (user, index) {
             return(
@@ -27,12 +52,11 @@ class TabelaUsers extends Component {
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     <td>
-                        <a href={`/admin/${user.id}/edit`} className="btn btn-info" role="button">Editar</a>
-                        <a href="/admin/users/create" className="btn btn-danger" role="button">Excluir</a>
+                        <a href={`/admin/users/${user.id}/edit`} className="btn btn-info" role="button">Editar</a>
+                        <button onClick={() => {this.deleteUser(user.id)}} className="btn btn-danger">Excluir</button>
                     </td>
                 </tr>
             )
-
         });
 
         return (
