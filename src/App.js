@@ -9,6 +9,7 @@ import TabelaComments from './componentes/admin/TabelaComments';
 import FormsPosts from './componentes/admin/FormPosts';
 import FormUsers from './componentes/admin/FormsUsers';
 import FormEditUsers from './componentes/admin/FormEditUsers';
+import FormsEditPosts from './componentes/admin/FormEditPosts';
 import Post from './componentes/Post';
 
 
@@ -32,7 +33,7 @@ class App extends Component {
                         <Route exact path="/admin/users/:id/edit" component={FormEditUsers}/>
                         <Route exact path="/admin/posts" component={TabelaPosts}/>
                         <Route exact path="/admin/posts/create" component={FormsPosts}/>
-                        <Route exact path="/admin/posts/:id/edit" component={FormsPosts}/>
+                        <Route exact path="/admin/posts/:id/edit" component={FormsEditPosts}/>
                     </Switch>
                 </div>
             </div>
