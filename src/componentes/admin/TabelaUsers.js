@@ -11,7 +11,7 @@ class TabelaUsers extends Component {
             redirect : false
         };
 
-        this.deleteUser = this.deleteUser.bind(this)
+        this.handleBtnDelete = this.handleBtnDelete.bind(this);
     }
 
     componentDidMount(){
@@ -24,7 +24,8 @@ class TabelaUsers extends Component {
         });
     }
 
-    deleteUser(id){
+    handleBtnDelete(id, event){
+        event.preventDefault();
         let self = this;
         axios({
             method: 'DELETE',
@@ -53,7 +54,7 @@ class TabelaUsers extends Component {
                     <td>{user.email}</td>
                     <td>
                         <a href={`/admin/users/${user.id}/edit`} className="btn btn-info" role="button">Editar</a>
-                        <button onClick={() => {this.deleteUser(user.id)}} className="btn btn-danger">Excluir</button>
+                        <button onClick={(event) => this.handleBtnDelete(user.id, event)} className="btn btn-danger">Excluir</button>
                     </td>
                 </tr>
             )
